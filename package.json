@@ -1,0 +1,27 @@
+{
+  "name": "browser-hacks",
+  "version": "1.0.0",
+  "description": "Simple browser hacks to make the web a little less annoying.",
+  "main": "main.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "echo 'No tests yet...'",
+    "fix": "npm run lint -- --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gness1804/browser-hacks.git"
+  },
+  "author": "Graham Nessler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gness1804/browser-hacks/issues"
+  },
+  "homepage": "https://github.com/gness1804/browser-hacks#readme",
+  "dependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  }
+}

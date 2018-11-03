@@ -14,7 +14,6 @@ const hideMRsByAuthor = () => {
       parentEl.style.display = 'none';
     }
   }
-
-}
+};
 
 hideMRsByAuthor();
