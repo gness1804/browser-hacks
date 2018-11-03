@@ -1,14 +1,5 @@
 #!/usr/bin/env bash
 
-# copy file contents to index.js
-function copyFileToIndex ()
-{
-  cat scratchJS/$1 >> scratchJS/index.js
-}
-
-# find all files in the scratchJS dir except for index.js
-files=$(ls scratchJS | grep -v index.js)
-
 # clear the index.js file
 echo '' > scratchJS/index.js
 
@@ -20,9 +11,7 @@ echo "
 // It should be auto-generated and not edited manually.
 " > scratchJS/index.js
 
-# iterate through all the files
-for i in "${files[@]}"
-do
-  copyFileToIndex "$i"
-done
+cat scratchJS/chineseForUs.js >> scratchJS/index.js
+echo '' >> scratchJS/index.js
+cat scratchJS/gitlab.js >> scratchJS/index.js
 
