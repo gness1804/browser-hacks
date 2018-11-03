@@ -11,6 +11,7 @@ echo "
 // It should be auto-generated and not edited manually.
 " > scratchJS/index.js
 
+## add the contents of each page to the master index.js
 cat scratchJS/chineseForUs.js >> scratchJS/index.js
 echo '' >> scratchJS/index.js
 cat scratchJS/gitlab.js >> scratchJS/index.js
