@@ -16,3 +16,5 @@ cat scratchJS/chineseForUs.js >> scratchJS/index.js
 echo '' >> scratchJS/index.js
 cat scratchJS/gitlab.js >> scratchJS/index.js
 
+echo 'Finished building scratchJS/index.js.'
+
