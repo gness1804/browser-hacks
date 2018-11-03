@@ -2,11 +2,12 @@
   "name": "browser-hacks",
   "version": "1.0.0",
   "description": "Simple browser hacks to make the web a little less annoying.",
-  "main": "main.js",
+  "main": "scratchJS/index.js",
   "scripts": {
     "lint": "eslint .",
     "test": "echo 'No tests yet...'",
-    "fix": "npm run lint -- --fix"
+    "fix": "npm run lint -- --fix",
+    "build:scratch": "bash scripts/build-index.sh"
   },
   "repository": {
     "type": "git",
