@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+os=$(uname -s)
+
 # clear the index.js file
 echo '' > scratchJS/index.js
 
@@ -15,6 +17,15 @@ echo "
 cat scratchJS/chineseForUs.js >> scratchJS/index.js
 echo '' >> scratchJS/index.js
 cat scratchJS/gitlab.js >> scratchJS/index.js
+echo '' >> scratchJS/index.js
+cat scratchJS/sympli.js >> scratchJS/index.js
+echo '' >> scratchJS/index.js
+
+## copy contents to clipboard for macOS
+if test $os == 'Darwin' ; then
+  pbcopy < scratchJS/index.js
+  echo 'Copied contents of index.js file to clipboard.'
+fi
 
 echo 'Finished building scratchJS/index.js.'
 
