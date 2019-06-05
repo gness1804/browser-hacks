@@ -71,13 +71,25 @@ const hideSidebar = () => {
   }
 };
 
-const makeCompFullScreen = () => {
-  if (document.querySelector('.m-panel__content')) {
-    document.querySelector('.m-panel__content').style.width = '3000px !important';
-  }
-};
+// const makeCompFullScreen = () => { // doesn't work
+//   if (document.querySelector('.m-panel__content')) {
+//     document.querySelector('.m-panel__content').style.width = '3000px !important';
+//   }
+// };
 
 if (window.location.href.indexOf('sympli.io') !== -1) {
   hideSidebar();
-  makeCompFullScreen();
+  // makeCompFullScreen();
+}
+
+// stack overflow
+
+const hideUselessSidebar = () => {
+  if (document.querySelector('#hot-network-questions')) {
+    document.querySelector('#hot-network-questions').style.display = 'none';
+  }
+};
+
+if (window.location.href.indexOf('stackoverflow.com') !== -1) {
+  hideUselessSidebar();
 }
