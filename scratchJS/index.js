@@ -4,18 +4,6 @@
 // To build this file. run npm run build:scratch.
 // It should be auto-generated and not edited manually.
 
-// chinesefor.us
-
-const hideSocialSidebar = () => {
-  if (document.querySelector('.essb_displayed_sidebar')) {
-    document.querySelector('.essb_displayed_sidebar').style.display = 'none';
-  }
-};
-
-if (window.location.href.indexOf('chinesefor.us') !== -1) {
-  hideSocialSidebar();
-}
-
 // gitlab.com
 // thanks to "masato sasano @masatosasano commented a month ago" in https://gitlab.com/gitlab-org/gitlab-ce/issues/13650 for the meat of this code
 

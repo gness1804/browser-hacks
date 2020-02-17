@@ -14,8 +14,6 @@ echo "
 " > scratchJS/index.js
 
 ## add the contents of each page to the master index.js
-cat scratchJS/chineseForUs.js >> scratchJS/index.js
-echo '' >> scratchJS/index.js
 cat scratchJS/gitlab.js >> scratchJS/index.js
 echo '' >> scratchJS/index.js
 cat scratchJS/sympli.js >> scratchJS/index.js
