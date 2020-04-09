@@ -20,6 +20,8 @@ cat scratchJS/sympli.js >> scratchJS/index.js
 echo '' >> scratchJS/index.js
 cat scratchJS/stackOverflow.js >> scratchJS/index.js
 echo '' >> scratchJS/index.js
+cat scratchJS/jira.js >> scratchJS/index.js
+echo '' >> scratchJS/index.js
 
 ## copy contents to clipboard for macOS
 if test $os == 'Darwin' ; then

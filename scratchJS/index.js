@@ -81,3 +81,10 @@ const hideUselessSidebar = () => {
 if (window.location.href.indexOf('stackoverflow.com') !== -1) {
   hideUselessSidebar();
 }
+
+// for jira
+
+if (document.querySelectorAll("[id*='card'] img").length) {
+  document.querySelectorAll("[id*='card'] img").forEach(elem => elem.style.display = 'none')
+}
+
