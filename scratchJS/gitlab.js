@@ -33,6 +33,21 @@ const hideMRsByAuthor = () => {
   }
 };
 
+const hideMRsWithTwoApprovals = () => {
+  const list = document.getElementsByClassName('issuable-upvotes');
+  if (!list) {
+    return;
+  }
+
+  for (const item of list) {
+    const approvals = item.textContent;
+    const parentEl = item.closest('.merge-request');
+    if (parseInt(approvals) > 1) {
+      parentEl.style.display = 'none';
+    }
+  }
+};
+
 const hideTreeView = () => {
   if (document.querySelector('.diff-tree-list')) {
     document.querySelector('.diff-tree-list').style.display = 'none';
@@ -42,5 +57,6 @@ const hideTreeView = () => {
 if (window.location.href.indexOf('gitlab') !== -1) {
   hideGitlabWIPS();
   hideMRsByAuthor();
+  hideMRsWithTwoApprovals();
   hideTreeView();
 }
