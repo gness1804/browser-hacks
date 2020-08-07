@@ -17,7 +17,7 @@ const hideGitlabWIPS = () => {
     if ({}.hasOwnProperty.call(mrList, key)) {
       const elem = mrList[key];
       const title = elem.getElementsByClassName('merge-request-title-text')[0].innerText;
-      if (title.indexOf('WIP') !== -1) {
+      if (title.indexOf('WIP') !== -1 || title.indexOf('Draft:') !== -1) {
         elem.style.display = 'none';
       }
     }
@@ -97,3 +97,34 @@ if (document.querySelectorAll("[id*='card'] img").length) {
   document.querySelectorAll("[id*='card'] img").forEach(elem => elem.style.display = 'none')
 }
 
+if (window.location.origin === 'http://localhost:3000') {
+  // the breakpoints for Tailwind out of the box.
+  const breakpoints = {
+    sm: 640,
+    md: 768,
+    lg: 1024,
+    xl: 1280,
+    '2xl': 1440,
+  };
+  let timeout;
+  window.addEventListener('resize', () => {
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+
+    timeout = setTimeout(() => {
+      const currWidth = window.innerWidth;
+      let currBreakpoint = 'default';
+      for (const breakpoint in breakpoints) {
+        if (breakpoints.hasOwnProperty(breakpoint)) {
+          const bpMinWidth = breakpoints[breakpoint];
+          if (currWidth >= bpMinWidth) {
+            currBreakpoint = breakpoint;
+            break;
+          }
+        }
+      }
+      console.log('currBreakpoint:', currBreakpoint);
+    }, 3000);
+  });
+}
