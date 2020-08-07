@@ -48,7 +48,7 @@ const hideMRsWithTwoApprovals = () => {
   for (const item of list) {
     const approvals = item.textContent;
     const parentEl = item.closest('.merge-request');
-    if (parseInt(approvals) > 1) {
+    if (parseInt(approvals, 10) > 1) {
       parentEl.style.display = 'none';
     }
   }
@@ -94,8 +94,11 @@ if (window.location.href.indexOf('stackoverflow.com') !== -1) {
 // for jira
 
 if (document.querySelectorAll("[id*='card'] img").length) {
-  document.querySelectorAll("[id*='card'] img").forEach(elem => elem.style.display = 'none')
+  // eslint-disable-next-line no-param-reassign
+  document.querySelectorAll("[id*='card'] img").forEach((elem) => { elem.style.display = 'none'; });
 }
+
+// tailwind breakpoint monitor
 
 if (window.location.origin === 'http://localhost:3000') {
   // the breakpoints for Tailwind out of the box.
@@ -116,7 +119,7 @@ if (window.location.origin === 'http://localhost:3000') {
       const currWidth = window.innerWidth;
       let currBreakpoint = 'default';
       for (const breakpoint in breakpoints) {
-        if (breakpoints.hasOwnProperty(breakpoint)) {
+        if ({}.hasOwnProperty.call(breakpoints, breakpoint)) {
           const bpMinWidth = breakpoints[breakpoint];
           if (currWidth >= bpMinWidth) {
             currBreakpoint = breakpoint;

@@ -11,7 +11,7 @@ const hideGitlabWIPS = () => {
     if ({}.hasOwnProperty.call(mrList, key)) {
       const elem = mrList[key];
       const title = elem.getElementsByClassName('merge-request-title-text')[0].innerText;
-      if (title.indexOf('WIP') !== -1) {
+      if (title.indexOf('WIP') !== -1 || title.indexOf('Draft:') !== -1) {
         elem.style.display = 'none';
       }
     }
@@ -42,7 +42,7 @@ const hideMRsWithTwoApprovals = () => {
   for (const item of list) {
     const approvals = item.textContent;
     const parentEl = item.closest('.merge-request');
-    if (parseInt(approvals) > 1) {
+    if (parseInt(approvals, 10) > 1) {
       parentEl.style.display = 'none';
     }
   }
