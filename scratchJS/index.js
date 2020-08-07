@@ -1,4 +1,3 @@
-
 // the master JS file that I use with Scratch.js. It works on all relevant pages.
 // this should always be up to date and kept in sync with ScratchJS in Chrome.
 // To build this file. run npm run build:scratch.
@@ -16,7 +15,8 @@ const hideGitlabWIPS = () => {
   for (const key in mrList) {
     if ({}.hasOwnProperty.call(mrList, key)) {
       const elem = mrList[key];
-      const title = elem.getElementsByClassName('merge-request-title-text')[0].innerText;
+      const title = elem.getElementsByClassName('merge-request-title-text')[0]
+        .innerText;
       if (title.indexOf('WIP') !== -1 || title.indexOf('Draft:') !== -1) {
         elem.style.display = 'none';
       }
@@ -94,8 +94,9 @@ if (window.location.href.indexOf('stackoverflow.com') !== -1) {
 // for jira
 
 if (document.querySelectorAll("[id*='card'] img").length) {
-  // eslint-disable-next-line no-param-reassign
-  document.querySelectorAll("[id*='card'] img").forEach((elem) => { elem.style.display = 'none'; });
+  document.querySelectorAll("[id*='card'] img").forEach((elem) => {
+    elem.style.display = 'none';
+  });
 }
 
 // tailwind breakpoint monitor
