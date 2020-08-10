@@ -1,4 +1,5 @@
 // tailwind breakpoint monitor
+// TODO: code is broken; need to fix
 
 if (window.location.origin === 'http://localhost:3000') {
   // the breakpoints for Tailwind out of the box.
