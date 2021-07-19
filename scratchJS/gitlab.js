@@ -12,7 +12,11 @@ const hideGitlabWIPS = () => {
       const elem = mrList[key];
       const title = elem.getElementsByClassName('merge-request-title-text')[0]
         .innerText;
-      if (title.indexOf('WIP') !== -1 || title.indexOf('Draft:') !== -1) {
+      if (
+        title.indexOf('WIP') !== -1 ||
+        title.indexOf('Draft:') !== -1 ||
+        title.indexOf('DRAFT:') !== -1
+      ) {
         elem.style.display = 'none';
       }
     }

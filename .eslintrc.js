@@ -34,6 +34,7 @@ module.exports = {
     'no-restricted-syntax': 'off',
     'no-underscore-dangle': 'off',
     'no-param-reassign': 'warn',
+    'operator-linebreak': 'off',
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }
